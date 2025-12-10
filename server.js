@@ -12,6 +12,18 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'ShopPrime Backend API is running!',
+    endpoints: {
+      products: '/api/products',
+      auth: '/api/auth',
+      seed: '/api/seed (POST)'
+    }
+  });
+});
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
