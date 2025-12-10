@@ -20,6 +20,7 @@ app.use('/api/wishlist', require('./routes/wishlist'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/coupons', require('./routes/coupons'));
+app.use('/api', require('./routes/seed'));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
